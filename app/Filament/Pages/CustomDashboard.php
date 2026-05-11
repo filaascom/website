@@ -5,6 +5,8 @@ namespace App\Filament\Pages;
 use BackedEnum;
 use Filament\Pages\Dashboard;
 use Filament\Support\Icons\Heroicon;
+use Filament\Widgets\AccountWidget;
+use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Contracts\Support\Htmlable;
 
 class CustomDashboard extends Dashboard
@@ -37,6 +39,9 @@ class CustomDashboard extends Dashboard
 
     public function getWidgets(): array
     {
-        return [];
+        return [
+            AccountWidget::class,
+            FilamentInfoWidget::class,
+        ];
     }
 }
