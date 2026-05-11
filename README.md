@@ -329,4 +329,4 @@ Buy at [filaas.com/#pricing](https://filaas.com/#pricing).
 ## License
 
 MIT-style up to your tier's cap, plus a commercial addendum for paid tiers.
-Plain English in `LICENSE`.
+Plain English in [`LICENSE.md`](LICENSE.md).
