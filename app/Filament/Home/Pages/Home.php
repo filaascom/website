@@ -140,9 +140,9 @@ class Home extends Page
                     ],
                     [
                         'kicker' => 'install',
-                        'title' => 'Migrate and build',
+                        'title' => 'Install and run',
                         'description' => 'Run the migrations and start a dev environment',
-                        'command' => 'php artisan migrate && make',
+                        'command' => 'cd my-app && npm i && make',
                     ],
                     [
                         'kicker' => 'ship',
