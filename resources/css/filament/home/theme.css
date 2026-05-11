@@ -1,0 +1,115 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@source '../../../../app/Filament/Home/**/*';
+@source '../../../../app/Filament/Schemas/**/*';
+@source '../../../../resources/views/filament/home/**/*';
+@source '../../../../resources/views/filament/schemas/**/*';
+@source '../../../../resources/views/components/**/*';
+@source '../../../../resources/views/logo.blade.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@keyframes landing-pulse {
+    0%, 100% { opacity: 0.3; }
+    50%      { opacity: 1; }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+body.fi-panel-home {
+    --lp-bg: oklch(0.18 0.012 250);
+    --bg-elev: oklch(0.215 0.012 250);
+    --bg-soft: oklch(0.235 0.012 250);
+    --surface: oklch(0.255 0.012 250);
+    --lp-text: oklch(0.97 0.005 250);
+    --text-2: oklch(0.78 0.012 250);
+    --text-3: oklch(0.6 0.012 250);
+    --border: oklch(1 0 0 / 0.08);
+    --border-2: oklch(1 0 0 / 0.14);
+    --accent: var(--primary-500);
+    --accent-ink: oklch(0.99 0.003 80);
+    --accent-soft: color-mix(in oklab, var(--primary-500) 14%, transparent);
+
+    background:
+        radial-gradient(1200px 600px at 50% -200px, var(--accent-soft), transparent 60%),
+        var(--lp-bg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
+    line-height: 1.5;
+    min-height: 100vh;
+
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+}
+
+html:not(.dark) body.fi-panel-home {
+    --lp-bg: oklch(0.985 0.004 80);
+    --bg-elev: oklch(0.975 0.004 80);
+    --bg-soft: oklch(0.96 0.004 80);
+    --surface: oklch(0.995 0.003 80);
+    --lp-text: oklch(0.22 0.012 250);
+    --text-2: oklch(0.42 0.012 250);
+    --text-3: oklch(0.55 0.012 250);
+    --border: oklch(0.22 0.012 250 / 0.1);
+    --border-2: oklch(0.22 0.012 250 / 0.18);
+    --accent: var(--primary-600);
+    --accent-soft: color-mix(in oklab, var(--primary-600) 10%, transparent);
+}
+
+body.fi-panel-home .fi-topbar {
+    align-items: center;
+    padding-inline: max(28px, calc((100% - 1144px) / 2)) !important;
+    background: color-mix(in oklab, var(--lp-bg) 70%, transparent) !important;
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 700px) {
+    body.fi-panel-home .fi-topbar {
+        padding-inline: 18px !important;
+    }
+}
+
+body.fi-panel-home .fi-main,
+body.fi-panel-home .fi-main-ctn {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+}
+
+body.fi-panel-home .fi-page,
+body.fi-panel-home .fi-page-header-main-ctn,
+body.fi-panel-home .fi-page-main,
+body.fi-panel-home .fi-page-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    max-width: none !important;
+}
+
+body.fi-panel-home .fi-sc.fi-sc-has-gap {
+    gap: 0 !important;
+}
+
+body.fi-panel-home .fi-btn.fi-color:not(.fi-outlined):not(label),
+body.fi-panel-home .fi-icon-btn.fi-color:not(.fi-outlined):not(label) {
+    color: var(--text);
+}
+
+html.dark body.fi-panel-home .fi-btn.fi-color:not(.fi-outlined):not(label),
+html.dark body.fi-panel-home .fi-icon-btn.fi-color:not(.fi-outlined):not(label) {
+    color: var(--dark-text);
+}
+
+html:has(body.fi-panel-home) {
+    scroll-padding-top: 80px;
+}

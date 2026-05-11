@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /billing/
+Disallow: /exports/
+Disallow: /push/
+Disallow: /share/
+
+Sitemap: /sitemap.xml

@@ -1,0 +1,42 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+@source '../../../../resources/views/vendor/filament-panels/**/*';
+@source '../../../../resources/views/components/**/*';
+@source '../../../../resources/views/logo.blade.php';
+
+.fi-ta-ctn .fi-ta-header.fi-ta-header-adaptive-actions-position {
+    @apply flex-row items-center flex-wrap;
+
+    & .fi-ta-actions {
+        @apply ms-auto;
+    }
+}
+
+.fi-ta-ctn .fi-ta-record .fi-ta-record-content-ctn {
+    @apply flex-row items-center;
+}
+
+.fi-page > .fi-tabs + .fi-page-header-main-ctn {
+    padding-top: 1rem;
+}
+
+.fi-section-header > .fi-icon {
+    box-sizing: content-box;
+    padding: calc(var(--spacing) * 3);
+    border-radius: 9999px;
+    background-color: var(--gray-100);
+
+    &:where(.dark, .dark *) {
+        background-color: color-mix(in oklab, var(--gray-500) 20%, transparent);
+    }
+
+    &.fi-color {
+        background-color: var(--color-100);
+
+        &:where(.dark, .dark *) {
+            background-color: color-mix(in oklab, var(--color-500) 20%, transparent);
+        }
+    }
+}
